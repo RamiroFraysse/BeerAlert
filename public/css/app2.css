@@ -1,0 +1,39 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    background: #000046 !important;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #1CB5E0, #000046)!important; /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #1CB5E0, #000046)!important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+i { 
+    color: white; 
+}
+
+.main-footer {
+ 
+    color: white!important;
+    padding: 1rem;
+    bottom: 2px;
+}
+.navbar-text {
+    color: #f8f9fa !important;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color:#f8f9fa !important;
+}
+
+.btn-noti-activadas {
+    background-color: green;
+}
+  
+.btn-noti-desactivadas {
+    background-color: red;
+}
+  
+  
+  
+.oculto {
+    display: none !important;
+}
+  
