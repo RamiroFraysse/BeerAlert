@@ -45,15 +45,19 @@
             <div class="collapse navbar-collapse" id="collapse_target">
                 
                 <ul class="navbar-nav">
-                    
-                    @if((Route::current()->getName()=='edit'))
-                    <a class="navbar-brand" href="{{ route('home')}}" ><img src="../favicon.ico" alt="home"></a>
+                    @if(auth()->user()!=null)
+                        @if((Route::current()->getName()=='edit'))
+                        <a class="navbar-brand" href="{{ route('home')}}" ><img src="../favicon.ico" alt="home"></a>
+                        @else
+                        <a class="navbar-brand" href="{{ route('home')}}" ><img src="./favicon.ico" alt="home"></a>
+                        @endif
+                            <span class="navbar-text">Beer Alert</span>
+                        </a>
                     @else
-                    <a class="navbar-brand" href="{{ route('home')}}" ><img src="./favicon.ico" alt="home"></a>
-                    @endif
+                        <a class="navbar-brand" href="{{ route('welcome')}}" ><img src="./favicon.ico" alt="home"></a>
                         <span class="navbar-text">Beer Alert</span>
-                    </a>
-                  
+
+                    @endif
                    
                     <!-- Authentication Links -->
                     @guest
@@ -82,7 +86,7 @@
                                 </a>
                                 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
+                                    @csrf
                                 </form>
 
                             </div>

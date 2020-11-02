@@ -94,11 +94,6 @@ self.addEventListener('activate', e => {
 self.addEventListener( 'fetch', e => {
     
     let respuesta;
-            // if(e.request.url.includes('/api')){
-            //     //llamo a una funcion encargada de manejar las cosas relacionadas a la api.
-            //     console.log('include api');
-            //     respuesta =  manejoApiMensajes(DYNAMIC_CACHE,e.request);
-            
             //CACHE WITH NEWTORK FALLBACK
             //1ro tengo que verificar en el cache si existe la request
             respuesta = caches.match( e.request ).then( res => {
@@ -115,11 +110,11 @@ self.addEventListener( 'fetch', e => {
                             return actualizaCacheDinamico( DYNAMIC_CACHE, e.request, newRes );
             
                         });
-                    }else
+                    }else{
                         return fetch(e.request);
+                    }
                 } 
             });
-        // }
     e.respondWith( respuesta );
 
 });
@@ -151,6 +146,7 @@ self.addEventListener('push', function (e) {
     }
 });
 
+//Cuando hace click en la notificación
 self.addEventListener('notificationclick',e => {
     const notificacion = e.notification; //referencia a la notificacion completa
     const accion = e.action;
