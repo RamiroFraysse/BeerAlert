@@ -4,18 +4,15 @@
         <div class="container-fluid" style="text-align: center">
             <button class="oculto btn-noti-activadas" >Notificaciones Activadas</button>
             <button class="oculto btn-noti-desactivadas">Notificaciones Desactivadas</button>
-            <br>
-            <br>
-            <br>
         </div>
         <!-- Fin de boton de notificaciones -->
-        
-        
         @if($temp_actual != -200)
 
         <div class="row justify-content-center">
-        
+                
                 <div class="col-md-8">
+                    <br>
+                    <br>
                     <div id="container">    
                         <?php
                             require "../resources/views/temp_dia.php";
@@ -23,18 +20,13 @@
                     </div>
                 </div>
         </div>
-
         @else
         <div class="container-fluid" style="text-align: center">                
                     <div class="row justify-content-center">
                         <img class = "img-fluid" src="../resources/assets/img/beer.png" alt="Responsive image">
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
+                    </div>                   
                     <div class="row justify-content-center">
-                        <h3 style = "font-size: 3vw !important;"><i><b>Es hora de poner tu cerveza a enfriar!</b></i></h3>
+                        <h2><i><b>Es hora de poner tu cerveza a enfriar!</b></i></h1>
                     </div>
         </div>
         @endif
