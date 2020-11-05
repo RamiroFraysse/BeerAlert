@@ -28,18 +28,13 @@ class DatosController extends Controller
                                      'ssid' => $ssid,
                                     ]);
          $user = \App\User::where('ssid',$ssid)->first();                         
-         // $user = DB::table('users')->where('ssid',$ssid)->first();
          //logica de enviar wp y notificación
          if($temperatura==3 || $temperatura==1){
-             // if( $user->email == auth()->user()->email){
-                 // Notification::send(auth()->user(),new PushDemo);
                  $user->notify(new \App\Notifications\Push());
                  return response()->json([
                      "ok" => true,
                      "data" => $user,
                  ]);
- 
-             // }
          }else if($temperatura<=0){
              $user->notify(new \App\Notifications\Push2());
              return response()->json([
